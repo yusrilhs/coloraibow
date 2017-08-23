@@ -5,7 +5,7 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define([], function () {
-      return (root.returnExportsGlobal = factory());
+      return (root.Colorainbow = factory());
     });
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but
@@ -33,12 +33,12 @@
   };
 
   Colorainbow.prototype.toString = function colorToString() {
-    var prefix = (this.a >= 0 && this.a < 1) ? "rgba" : "rgb"
+    var prefix = (this.a >= 0 && this.a < 1) ? 'rgba' : 'rgb'
       , components =  (this.a < 0 || this.a >=1) ? 
                           [this.r, this.g, this.b].join(', ') : 
                           [this.r, this.g, this.b, this.a].join(', ');
     
-    var result = prefix + "(" + components + ")";
+    var result = prefix + '(' + components + ')';
 
     return result;
   };
@@ -49,7 +49,7 @@
     return this;
   };
 
-  Colorainbow.prototype.toHexString = function() {
+  Colorainbow.prototype.hexString = function() {
     var rgb = ((this.r & 0xFF) << 16) + ((this.g & 0xFF) << 8) + (this.b & 0xFF);
     var str = rgb.toString(16).toUpperCase();
 
@@ -61,7 +61,7 @@
     if (numbers <= 0) return [];
     else numbers = parseInt(numbers);
 
-    var frequency = 5 / parseInt(numbers)
+    var frequency = 5 / numbers
       , results = [];
     
     for(var i=0;i<numbers;++i) {
