@@ -1,0 +1,22 @@
+{
+  "name": "colorainbow",
+  "description": "Easiest way for create rainbow color for your projects",
+  "main": "colorainbow.js",
+  "authors": [
+    "Yusril Herlian syah"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "color",
+    "rainbow",
+    "generator"
+  ],
+  "homepage": "https://github.com/yusrilhs/colorainbow",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
