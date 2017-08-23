@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorainbow Test Visual</title>
+</head>
+<body>
+  <h3>RGB Colors</h3>
+  <div id="colors-rgb"></div>
+  <h3>Hex Colors</h3>
+  <div id="colors-hex"></div>
+  <h3>RGBA Colors</h3>
+  <div id="colors-rgba"></div>
+
+  <script type="text/javascript" src="../../colorainbow.js"></script>
+  <script type="text/javascript">
+    var colorsRgb = document.getElementById('colors-rgb')
+      , colorsHex = document.getElementById('colors-hex')
+      , colorsRgba = document.getElementById('colors-rgba')
+      , rainbows = Colorainbow.generate(10);
+
+    for(var i=0;i<rainbows.length;i++) {
+      var spanRgb  = document.createElement('SPAN')
+        , spanRgba = document.createElement('SPAN')
+        , spanHex  = document.createElement('SPAN');
+
+      spanRgb.style.display = 'block';
+      spanRgb.style.height = '40px';
+      spanRgb.style.width = '100%';
+      spanRgb.style.backgroundColor = rainbows[i].hexString();
+      
+      spanHex.style.display = 'block';
+      spanHex.style.height = '40px';
+      spanHex.style.width = '100%';
+      spanHex.style.backgroundColor = rainbows[i];
+
+      spanRgba.style.display = 'block';
+      spanRgba.style.height = '40px';
+      spanRgba.style.width = '100%';
+      spanRgba.style.backgroundColor = rainbows[i].alpha(0.8);
+
+      colorsRgb.appendChild(spanRgb);
+      colorsHex.appendChild(spanHex);
+      colorsRgba.appendChild(spanRgba);
+    }
+  </script>
+
+</body>
+</html>
