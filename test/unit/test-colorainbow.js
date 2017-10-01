@@ -10,16 +10,24 @@ describe('colorainbow.js', function() {
       var black = new Colorainbow(0, 0, 0);
       var white = new Colorainbow(255, 255, 255);
 
-      assert.equal(black, 'rgb(0, 0, 0)');
-      assert.equal(white, 'rgb(255, 255, 255)');
+      assert.equal(black, 'rgb(0,0,0)');
+      assert.equal(white, 'rgb(255,255,255)');
     });
 
     it('Should return rgba color value', function() {
       var black = new Colorainbow(0, 0, 0).alpha(0.5);
       var white = new Colorainbow(255, 255, 255).alpha(0.5);
 
-      assert.equal(black, 'rgba(0, 0, 0, 0.5)');
-      assert.equal(white, 'rgba(255, 255, 255, 0.5)');
+      assert.equal(black, 'rgba(0,0,0,0.5)');
+      assert.equal(white, 'rgba(255,255,255,0.5)');
+    });
+
+    it('Should alpha not included if that have 1 value', function() {
+      var black = new Colorainbow(0, 0, 0);
+
+      assert.equal(black.toString(), 'rgb(0,0,0)');
+      assert.equal(black.alpha(-1).toString(), 'rgb(0,0,0)');
+      assert.equal(black.alpha(2).toString(), 'rgb(0,0,0)');
     });
 
     it('Should return hex color value with uppercase', function() {
@@ -38,7 +46,7 @@ describe('colorainbow.js', function() {
   });
 
   describe('Colorainbow generator', function() {
-    it('Should return array of colorainbow', function() {
+    it('Should return array of Colorainbow', function() {
       var rainbows = Colorainbow.generate(10);
 
       assert.lengthOf(rainbows, 10);
