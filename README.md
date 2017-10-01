@@ -6,7 +6,7 @@ Easiest way for create rainbow color for your projects
 
 * npm `npm install colorainbow`
 * bower `bower install colorainbow`
-* Zip Release [Download](https://github.com/yusrilhs/colorainbow/releases/download/v1.0.0/colorainbow-1.0.0.zip)
+* Zip Release [Download](https://github.com/yusrilhs/colorainbow/releases/download/v1.0.1/colorainbow-1.0.1.zip)
 
 ## How to use
 ```js
