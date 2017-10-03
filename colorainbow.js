@@ -61,7 +61,7 @@
     if (numbers <= 0) return [];
     else numbers = parseInt(numbers);
 
-    var frequency = 5 / numbers, 
+    var frequency = 6 / numbers, 
         results = [];
     
     for(var i=0;i<numbers;++i) {
