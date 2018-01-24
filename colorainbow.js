@@ -33,12 +33,11 @@
   };
 
   Colorainbow.prototype.toString = function colorToString() {
-    var prefix = (this.alph >= 0 && this.alph < 1) ? 'rgba' : 'rgb', 
-        components =  (this.alph < 0 || this.alph >=1) ? 
-                          [this.red, this.green, this.blue].join(',') : 
-                          [this.red, this.green, this.blue, this.alph].join(',');
-    
-    var result = prefix + '(' + components + ')';
+    var prefix = (this.alph >= 0 && this.alph < 1) ? 'rgba' : 'rgb',
+        components =  (this.alph < 0 || this.alph >= 1) ?
+                          [this.red, this.green, this.blue].join(',') :
+                          [this.red, this.green, this.blue, this.alph].join(','),
+        result = prefix + '(' + components + ')';
 
     return result;
   };
@@ -50,25 +49,21 @@
   };
 
   Colorainbow.prototype.hexString = function() {
-    var rgb = ((this.red & 0xFF) << 16) + ((this.green & 0xFF) << 8) + (this.blue & 0xFF);
-    var str = rgb.toString(16).toUpperCase();
+    var rgb = ((this.red & 0xFF) << 16) + ((this.green & 0xFF) << 8) + (this.blue & 0xFF),
+        str = rgb.toString(16).toUpperCase();
 
     return '#' + ('000000'.substring(str.length) + str);
   };
 
   Colorainbow.generate = function(numbers) {
-    // Return an empty array when less than 1
-    if (numbers <= 0) return [];
-    else numbers = parseInt(numbers);
-
-    var frequency = 6 / numbers, 
+    var frequency = 6 / parseInt(numbers),
         results = [];
-    
-    for(var i=0;i<numbers;++i) {
-      var r = Math.sin(frequency * i + 0) * (127) + 128, 
-          g = Math.sin(frequency * i + 1) * (127) + 128, 
-          b = Math.sin(frequency * i + 3) * (127) + 128;
-      
+
+    for(var i=1;i<=numbers;++i) {
+      var r = Math.sin(frequency * (i - 1) + 0) * (127) + 128,
+          g = Math.sin(frequency * (i - 1) + 1) * (127) + 128,
+          b = Math.sin(frequency * (i - 1) + 3) * (127) + 128;
+
       results.push(new Colorainbow(r, g, b));
     }
 
