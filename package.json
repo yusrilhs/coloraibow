@@ -1,6 +1,6 @@
 {
   "name": "colorainbow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easiest way for create rainbow color for your projects",
   "main": "colorainbow.js",
   "scripts": {
